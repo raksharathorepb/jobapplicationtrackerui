@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Navbar from "./components/source/Navbar";
-import AddJob from "./components/applications/Add";
-import Applications from "./components/applications/List";
+import Navbar from "./components/Source/navbar";
+import AddJob from "./components/Application/addapplication";
+import Applications from "./components/Application/listapplication";
 import { ToastContainer } from "react-toastify";
-import Footer from "./components/source/Footer";
+import Footer from "./components/Source/footer";
 
 function App() {
   return (

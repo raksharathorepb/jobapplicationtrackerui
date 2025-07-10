@@ -1,26 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="navbar navbar-expand-lg navbar-dark btn-custom sticky-top mb-4">
-//       <div className="container">
-//         <Link className="navbar-brand" to="applications">
-//           Job Tracker
-//         </Link>
-//         <div className="collapse navbar-collapse">
-//           <ul className="navbar-nav ms-auto">
-//             <li className="nav-item">
-//               <Link className="nav-link" to="/add">
-//                 Add New Job
-//               </Link>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
 
 // export default Navbar;
 import React from "react";

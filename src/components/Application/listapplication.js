@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";  
 import JobTable from "../JobTable";
-import Pagination from "../source/Pagination";
+import Pagination from "../Source/pagination";
 import api from "../../api";
 import { Spinner } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -28,6 +29,7 @@ const Applications = () => {
       setTotalCount(res.data.totalCount);
     } catch (error) {
       console.error("Failed to fetch job applications:", error);
+      toast.error("Failed to load Job application data.");
     }
     finally {
       setLoading(false);
@@ -44,11 +46,16 @@ const Applications = () => {
     );
   };
 
+  const handlePageChange = (newPage) => {
+  setPage(newPage);
+};
+
+
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
 
   return (
     <div>
-      <h3 className="text-center mb-4">Welcome to Job Traker</h3>
+      <h3 className="text-center mb-4">Welcome to Job Tracker</h3>
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12">
@@ -69,7 +76,7 @@ const Applications = () => {
                   <Pagination
                     currentPage={page}
                     totalPages={totalPages}
-                    onPageChange={(newPage) => setPage(newPage)}
+                    onPageChange={handlePageChange}
                   />
                 </>
               )}
