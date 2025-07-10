@@ -1,0 +1,99 @@
+@import "./variables";
+@import "./footer.scss";
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: $bg-light;
+  font-size: $font-md;
+  color: $secondary-color;
+}
+
+.container {
+  padding: $spacing-md;
+}
+
+.table thead th {
+  background-color: $primary-color;
+  color: white; // for contrast
+}
+
+.btn-custom {
+  background-color: $primary-color;
+  color: white;
+
+  .nav-link,
+  .navbar-brand {
+    color: white !important;
+
+    &:hover {
+      color: #e6e6e6 !important; // subtle hover
+    }
+  }
+
+  &:hover {
+    background-color: darken($primary-color, 2%);
+  }
+}
+
+
+.pagination {
+  .page-item {
+    .page-link {
+      color: $primary-color;
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+        color: white;
+      }
+    }
+
+    &.active .page-link {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+}
+
+.navbar .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: lighten($primary-color, 20%);
+    background-color: lighten($primary-color, 10%); // subtle highlight
+    color: white; // keep text white
+  }
+}
+
+/*styles for status dropdown */
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: visible; // allow dropdown to overflow vertically
+  padding-bottom: 4rem; // extra space for mobile dropdown
+}
+
+
+.status-cell {
+  min-width: 160px;
+  z-index: 10; 
+}
+
+.status-dropdown {
+  width: 100%;
+  font-size: 14px;
+  padding: 0.4rem;
+
+  @media (max-width: 576px) {
+    font-size: 13px;
+    min-width: 100%; // full width
+  }
+}
+
