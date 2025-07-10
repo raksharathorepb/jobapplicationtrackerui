@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import JobTable from "../JobTable";
 import Pagination from "../source/Pagination";
 import api from "../../api";
+import { Spinner } from "react-bootstrap";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -10,8 +11,11 @@ const Applications = () => {
   const [jobs, setJobs] = useState([]);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+  const [loading, setLoading] = useState(true); 
+
 
   const fetchJobs = async (pageNumber = 1) => {
+    setLoading(true); 
     try {
       const res = await api.get("/applications", {
         params: {
@@ -24,6 +28,9 @@ const Applications = () => {
       setTotalCount(res.data.totalCount);
     } catch (error) {
       console.error("Failed to fetch job applications:", error);
+    }
+    finally {
+      setLoading(false);
     }
   };
 
@@ -52,12 +59,20 @@ const Applications = () => {
                   Add New Job
                 </Link>
               </div>
-            <JobTable jobs={jobs} onStatusChange={handleStatusChange} />
-            <Pagination
-              currentPage={page}
-              totalPages={totalPages}
-              onPageChange={(newPage) => setPage(newPage)}
-            />
+             {loading ? (
+                <div className="text-center my-5">
+                  <Spinner animation="border" role="status" variant="primary" />
+                </div>
+              ) : (
+                <>
+                  <JobTable jobs={jobs} onStatusChange={handleStatusChange} />
+                  <Pagination
+                    currentPage={page}
+                    totalPages={totalPages}
+                    onPageChange={(newPage) => setPage(newPage)}
+                  />
+                </>
+              )}
           </div>
         </div>
       </div>
