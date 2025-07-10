@@ -15,8 +15,10 @@ http://localhost:5257
 If your backend is running on a different port (like 5000), set this api.js file
   baseURL: "http://localhost:5257/api"
 
-# Note :
-Environment Setup- No .env file is strictly required for the frontend 
+# Environment Setup-
+Node version
+v20
+No .env file is strictly required for the frontend 
 
 # Tech Stack
 

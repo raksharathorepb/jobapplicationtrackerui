@@ -14,19 +14,19 @@ body {
 
 .table thead th {
   background-color: $primary-color;
-  color: white; // for contrast
+  color: $bg-light; // for contrast
 }
 
 .btn-custom {
   background-color: $primary-color;
-  color: white;
+  color: $bg-light;
 
   .nav-link,
   .navbar-brand {
-    color: white !important;
+    color: $bg-light !important;
 
     &:hover {
-      color: #e6e6e6 !important; // subtle hover
+      color: $bg-light; // subtle hover
     }
   }
 
@@ -43,14 +43,14 @@ body {
 
       &:hover {
         background-color: lighten($primary-color, 10%);
-        color: white;
+        color: $bg-light;
       }
     }
 
     &.active .page-link {
       background-color: $primary-color;
       border-color: $primary-color;
-      color: white;
+      color: $bg-light;
     }
   }
 }
@@ -69,7 +69,7 @@ body {
   &:hover {
     border-color: lighten($primary-color, 20%);
     background-color: lighten($primary-color, 10%); // subtle highlight
-    color: white; // keep text white
+    color: $bg-light; // keep text $bg-light
   }
 }
 
