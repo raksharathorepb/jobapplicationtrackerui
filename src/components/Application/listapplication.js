@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";  
-import JobTable from "../JobTable";
+import JobTable from "../jobTable";
 import Pagination from "../Source/pagination";
 import api from "../../api";
 import { Spinner } from "react-bootstrap";
